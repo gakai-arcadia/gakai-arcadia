@@ -1,60 +1,177 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>GAKAI ARCADIA</title>
-<style>
-body {
-  background:#f5f5f5;
-  color:#333;
-  font-family: sans-serif;
-  line-height:1.8;
-  max-width:700px;
-  margin:40px auto;
-}
-h1 {
-  font-size:28px;
-}
-.section {
-  margin-top:40px;
-}
-a {
-  color:#555;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>畫界アルカディア | GAKAI ARCADIA</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f3f3f1;
+      color: #333;
+      font-family: "Noto Sans JP", sans-serif;
+      line-height: 1.9;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 420px;
+      display: block;
+      margin: 0 auto 24px;
+    }
+
+    .catch {
+      font-size: 1.1rem;
+      color: #444;
+      margin: 0;
+    }
+
+    .hero-image-wrap {
+      margin: 40px auto 0;
+      max-width: 360px;
+    }
+
+    .hero-image {
+      width: 100%;
+      display: block;
+      border-radius: 6px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    section {
+      margin-top: 56px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0 0 24px;
+      color: #2f2f2f;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+    }
+
+    .rule-list,
+    .char-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .char-name {
+      font-weight: 600;
+    }
+
+    .kindle-box {
+      margin-top: 16px;
+      padding: 20px 22px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 8px;
+    }
+
+    .kindle-link {
+      display: inline-block;
+      margin-top: 8px;
+      color: #444;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid #888;
+      padding-bottom: 2px;
+    }
+
+    .kindle-link:hover {
+      opacity: 0.75;
+    }
+
+    .footer {
+      margin-top: 72px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 32px 20px 64px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .catch {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="container">
 
-<h1>畫界アルカディア</h1>
+    <header class="hero">
+      <img src="logo.png" alt="畫界アルカディア ロゴ" class="logo">
 
-<p>
-色のない世界で、彼女は描く。
-</p>
+      <p class="catch">
+        色のない世界で、彼女は描く。
+      </p>
 
-<div class="section">
-<h2>世界ルール</h2>
-<p>
-理解していないものは、存在できない。<br>
-色は力ではなく、認識である。<br>
-色は有限であり、使えば減る。
-</p>
-</div>
+      <div class="hero-image-wrap">
+        <img src="yuina.jpg" alt="ユイナ" class="hero-image">
+      </div>
+    </header>
 
-<div class="section">
-<h2>Character</h2>
-<p>
-ユイナ：描く（不完全）<br>
-ロア：奪う（成立している）
-</p>
-</div>
+    <section>
+      <h2>世界ルール</h2>
+      <div class="rule-list">
+        <p>理解していないものは、存在できない。</p>
+        <p>色は力ではなく、認識である。</p>
+        <p>色は有限であり、使えば減る。</p>
+      </div>
+    </section>
 
-<div class="section">
-<h2>Read</h2>
-<p>
-<a href="https://www.amazon.co.jp/dp/B0GTKTXNS8">▶ Kindleで読む</a>
-</p>
-</div>
+    <section>
+      <h2>Character</h2>
+      <div class="char-list">
+        <p><span class="char-name">ユイナ</span>：描く（不完全）</p>
+        <p><span class="char-name">ロア</span>：奪う（成立している）</p>
+      </div>
+    </section>
 
+    <section>
+      <h2>Read</h2>
+      <div class="kindle-box">
+        <p>『畫界アルカディア 序章：白紙の世界』 Kindleで公開中</p>
+        <a href="https://www.amazon.co.jp/dp/B0GTKTXNS8" class="kindle-link">
+          ▶ Kindleで読む
+        </a>
+      </div>
+    </section>
+
+    <div class="footer">
+      GAKAI ARCADIA
+    </div>
+
+  </div>
 </body>
 </html>
