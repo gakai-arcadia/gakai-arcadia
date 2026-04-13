@@ -1,296 +1,316 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>畫界アルカディア | GAKAI ARCADIA Official</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-base: #f8f8f6;
-            --text-main: #2d2d2d;
-            --accent-blue: #5b9bd5;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>畫界アルカディア | GAKAI ARCADIA Official</title>
+  <meta name="description" content="灰色の世界で、彼女は描く。創作ファンタジー『畫界アルカディア』公式サイト。本編は6/22公開予定。現在はキャラクターイメージと世界観を先行公開中。" />
+  <style>
+    :root {
+      --text: #444;
+      --sub: #666;
+      --line: #e8e8e8;
+      --bg: #fafafa;
+      --card: #ffffff;
+    }
 
-        body {
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            font-family: 'Noto Sans JP', sans-serif;
-            overflow-x: hidden;
-            background-image: url("https://www.transparenttextures.com/patterns/watercolor.png");
-        }
+    * { box-sizing: border-box; }
 
-        h1, h2, .serif {
-            font-family: 'Noto Serif JP', serif;
-        }
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.9;
+      letter-spacing: 0.02em;
+    }
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
+    .wrap {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    header {
+      padding: 22px 0 0;
+    }
 
-        .image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
+    .lang {
+      font-size: 12px;
+      color: var(--sub);
+      text-align: right;
+      margin-bottom: 18px;
+    }
 
-        .image-container img {
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        }
+    .hero {
+      padding: 72px 0 64px;
+      text-align: center;
+    }
 
-        .image-container:hover img {
-            transform: scale(1.05);
-        }
+    .logo {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 28px;
+      display: block;
+    }
 
-        .watercolor-accent {
-            position: absolute;
-            z-index: -1;
-            filter: blur(60px);
-            opacity: 0.3;
-            pointer-events: none;
-        }
+    h1, h2, h3, p {
+      margin: 0;
+      font-weight: 400;
+    }
 
-        .kindle-btn {
-            background: linear-gradient(135deg, #444, #222);
-            transition: all 0.3s ease;
-        }
+    .catch {
+      font-size: clamp(26px, 4.2vw, 40px);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
 
-        .kindle-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            background: linear-gradient(135deg, #555, #333);
-        }
+    .title {
+      font-size: 15px;
+      color: var(--sub);
+      letter-spacing: 0.12em;
+      margin-bottom: 28px;
+    }
 
-        [data-lang="ja"] .lang-en { display: none !important; }
-        [data-lang="en"] .lang-ja { display: none !important; }
+    .lead {
+      font-size: 16px;
+      max-width: 620px;
+      margin: 0 auto 12px;
+    }
 
-        .lang-btn {
-            transition: all 0.3s ease;
-        }
+    .lead-en {
+      font-size: 14px;
+      color: var(--sub);
+      max-width: 620px;
+      margin: 0 auto;
+    }
 
-        .lang-btn.active {
-            background-color: var(--text-main);
-            color: white;
-        }
+    section {
+      padding: 60px 0;
+      border-top: 1px solid var(--line);
+    }
 
-        .lang-btn:not(.active):hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-    </style>
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .section-sub {
+      font-size: 13px;
+      color: var(--sub);
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 20px;
+    }
+
+    .rule-no {
+      font-size: 12px;
+      color: var(--sub);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .rule-text {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .rule-en {
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.7;
+    }
+
+    .about {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .characters {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .character img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+      background: #f2f2f2;
+    }
+
+    .name {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .name-en {
+      font-size: 12px;
+      color: var(--sub);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .desc {
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .desc-en {
+      font-size: 13px;
+      color: var(--sub);
+      line-height: 1.8;
+    }
+
+    .status {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .status-main {
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .status-copy {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .status-note {
+      font-size: 14px;
+      color: var(--sub);
+    }
+
+    footer {
+      padding: 40px 0 56px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--sub);
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 760px) {
+      .rules,
+      .characters {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 56px 0 48px;
+      }
+
+      .card {
+        padding: 20px 18px;
+      }
+    }
+  </style>
 </head>
-<body class="antialiased" data-lang="ja">
+<body>
+  <div class="wrap">
+    <header>
+      <div class="lang">JP / EN</div>
+    </header>
 
-    <!-- Language Selector -->
-    <div class="fixed top-4 right-4 md:top-6 md:right-8 z-50 flex bg-white/60 backdrop-blur-md rounded-full shadow-sm border border-white/80 p-1 font-sans">
-        <button onclick="setLanguage('ja')" id="btn-ja" class="lang-btn active px-3 py-1.5 text-xs font-semibold rounded-full tracking-wider text-white">JP</button>
-        <button onclick="setLanguage('en')" id="btn-en" class="lang-btn text-gray-500 px-3 py-1.5 text-xs font-semibold rounded-full tracking-wider">EN</button>
-    </div>
+    <main>
+      <section class="hero" style="border-top:none;">
+        <img class="logo" src="images/logo.png" alt="畫界アルカディア ロゴ" />
+        <h1 class="catch">灰色の世界で、彼女は描く。</h1>
+        <p class="title">畫界アルカディア / GAKAI ARCADIA</p>
+        <p class="lead">色を理解しなければ、触れることも、存在させることもできない。</p>
+        <p class="lead-en">If you cannot understand a color, you cannot touch it or make it exist.</p>
+      </section>
 
-    <!-- Decoration -->
-    <div class="watercolor-accent bg-blue-400 w-96 h-96 top-[-10%] left-[-10%] rounded-full"></div>
-    <div class="watercolor-accent bg-yellow-200 w-80 h-80 bottom-[20%] right-[-10%] rounded-full"></div>
+      <section>
+        <h2 class="section-title">作品について</h2>
+        <p class="section-sub">ABOUT</p>
+        <p class="about">
+          灰色の世界で目を覚ましたユイナは、手元に残されたガラスペンだけを頼りに生き延びようとする。<br />
+          この世界では、色を理解しなければ触れることも干渉することもできない。<br />
+          仲間と出会いながら、ユイナは失われた色の意味と、この世界のルールに近づいていく。<br />
+          これは、不完全なまま生きるために、色を取り戻す物語。
+        </p>
+      </section>
 
-    <div class="max-w-4xl mx-auto px-6 py-12 lg:py-24">
+      <section>
+        <h2 class="section-title">世界ルール</h2>
+        <p class="section-sub">WORLD RULES</p>
+        <div class="rules">
+          <article class="card">
+            <div class="rule-no">RULE 01</div>
+            <p class="rule-text">理解していないものは、存在できない。</p>
+            <p class="rule-en">What is not understood cannot exist.</p>
+          </article>
+          <article class="card">
+            <div class="rule-no">RULE 02</div>
+            <p class="rule-text">色は力ではなく、認識である。</p>
+            <p class="rule-en">Color is not power, but perception.</p>
+          </article>
+          <article class="card">
+            <div class="rule-no">RULE 03</div>
+            <p class="rule-text">色は有限であり、使えば減る。</p>
+            <p class="rule-en">Colors are finite; to use them is to lose them.</p>
+          </article>
+        </div>
+      </section>
 
-        <!-- Header / Hero -->
-        <header class="text-center mb-24 fade-in">
-            <img src="logo.png" alt="畫界アルカディア ロゴ" class="mx-auto w-full max-w-lg mb-10 transition-opacity duration-700 hover:opacity-90">
+      <section>
+        <h2 class="section-title">Characters</h2>
+        <p class="section-sub">主要人物</p>
+        <div class="characters">
+          <article class="card character">
+            <img src="images/yuina.jpg" alt="ユイナ" />
+            <h3 class="name">ユイナ</h3>
+            <p class="name-en">YUINA</p>
+            <p class="desc">描く（不完全）。色のない世界で、形と色を繋ぎ止めようとする少女。</p>
+            <p class="desc-en">The Painter, still incomplete. A girl trying to anchor form and color in a gray world.</p>
+          </article>
+          <article class="card character">
+            <img src="images/loa.jpg" alt="ロア" />
+            <h3 class="name">ロア</h3>
+            <p class="name-en">LOA</p>
+            <p class="desc">奪う。既に在る色を奪い、自らの成立を保つ者。</p>
+            <p class="desc-en">The one who steals existing colors to preserve his own existence.</p>
+          </article>
+        </div>
+      </section>
 
-            <div class="space-y-4">
-                <p class="serif text-xl md:text-2xl tracking-[0.2em] text-gray-700">
-                    <span class="lang-ja">色のない世界で、彼女は描く。</span>
-                    <span class="lang-en tracking-wider">In a colorless world, she paints.</span>
-                </p>
-                <p class="text-sm md:text-base text-gray-500 tracking-widest">
-                    <span class="lang-ja">理解しなければ、存在できない。</span>
-                    <span class="lang-en">What is not understood cannot exist.</span>
-                </p>
-                <div class="h-px w-12 bg-gray-300 mx-auto mt-8"></div>
-            </div>
+      <section>
+        <h2 class="section-title">本編公開について</h2>
+        <p class="section-sub">STORY RELEASE</p>
+        <div class="status">
+          <p class="status-main">本編は 6/22 公開予定</p>
+          <p class="status-copy">現在はキャラクターイメージと世界観を先行公開中です。</p>
+          <p class="status-note">小説本文は 6/22 まで外部サイトで公開せず、公開後に各連載サイトへ順次展開予定です。</p>
+        </div>
+      </section>
+    </main>
 
-            <div class="mt-16 image-container max-w-md mx-auto">
-                <img src="yuina.jpg" alt="ユイナ" class="w-full h-auto block">
-            </div>
-        </header>
-
-        <!-- World Concept -->
-        <section class="mb-32 fade-in">
-            <div class="flex items-center justify-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-semibold tracking-widest border-b border-gray-400 pb-2">
-                    <span class="lang-ja">世界ルール</span>
-                    <span class="lang-en tracking-[0.3em] uppercase text-xl">World Rules</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="relative rounded-xl border border-white/50 shadow-sm overflow-hidden group">
-                    <div class="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110 opacity-70" style="background-image: url('yuina.jpg'); background-position: top center;"></div>
-                    <div class="absolute inset-0 bg-white/70 backdrop-blur-[3px] transition-colors duration-500 group-hover:bg-white/60"></div>
-                    <div class="relative p-8 z-10">
-                        <span class="text-xs text-gray-600 font-bold block mb-4 tracking-tighter drop-shadow-sm">RULE 01</span>
-                        <p class="text-lg leading-relaxed serif text-gray-900 font-semibold drop-shadow-sm">
-                            <span class="lang-ja">理解していないものは、存在できない。</span>
-                            <span class="lang-en text-base">What is not understood cannot exist.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative rounded-xl border border-white/50 shadow-sm overflow-hidden group">
-                    <div class="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110 opacity-70" style="background-image: url('yuina.jpg'); background-position: center;"></div>
-                    <div class="absolute inset-0 bg-white/70 backdrop-blur-[3px] transition-colors duration-500 group-hover:bg-white/60"></div>
-                    <div class="relative p-8 z-10">
-                        <span class="text-xs text-gray-600 font-bold block mb-4 tracking-tighter drop-shadow-sm">RULE 02</span>
-                        <p class="text-lg leading-relaxed serif text-gray-900 font-semibold drop-shadow-sm">
-                            <span class="lang-ja">色は力ではなく、認識である。</span>
-                            <span class="lang-en text-base">Color is not power, but perception.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="relative rounded-xl border border-white/50 shadow-sm overflow-hidden group">
-                    <div class="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110 opacity-70" style="background-image: url('yuina.jpg'); background-position: bottom center;"></div>
-                    <div class="absolute inset-0 bg-white/70 backdrop-blur-[3px] transition-colors duration-500 group-hover:bg-white/60"></div>
-                    <div class="relative p-8 z-10">
-                        <span class="text-xs text-gray-600 font-bold block mb-4 tracking-tighter drop-shadow-sm">RULE 03</span>
-                        <p class="text-lg leading-relaxed serif text-gray-900 font-semibold drop-shadow-sm">
-                            <span class="lang-ja">色は有限であり、使えば減る。</span>
-                            <span class="lang-en text-base">Colors are finite; to use them is to lose them.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Characters -->
-        <section class="mb-32 fade-in">
-            <div class="flex items-center justify-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-semibold tracking-widest border-b border-gray-400 pb-2">Characters</h2>
-            </div>
-
-            <div class="space-y-12 max-w-2xl mx-auto">
-                <div class="flex flex-col md:flex-row items-center gap-8 group">
-                    <div class="w-24 h-24 rounded-full bg-gray-200 overflow-hidden flex-shrink-0 shadow-inner">
-                        <img src="yuina.jpg" alt="ユイナ" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2 flex items-center gap-3">
-                            <span class="serif lang-ja">ユイナ</span>
-                            <span class="serif lang-en">Yuina</span>
-                            <span class="text-xs font-light text-gray-400 tracking-widest uppercase">YUINA</span>
-                        </h3>
-                        <p class="text-gray-600 leading-loose">
-                            <span class="lang-ja">描く（不完全）。白紙の世界に「形」と「色」を繋ぎ止めようとする少女。</span>
-                            <span class="lang-en">The Painter (Incomplete). A girl who struggles to anchor "form" and "color" in a blank world.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col md:flex-row-reverse items-center gap-8 group">
-                    <div class="w-24 h-24 rounded-full bg-gray-800 overflow-hidden flex-shrink-0 shadow-inner flex items-center justify-center text-white serif italic text-xl">
-                        Loa
-                    </div>
-                    <div class="text-right md:text-left">
-                        <h3 class="text-xl font-semibold mb-2 flex items-center justify-end md:justify-start gap-3">
-                            <span class="text-xs font-light text-gray-400 tracking-widest uppercase">LOA</span>
-                            <span class="serif lang-ja">ロア</span>
-                            <span class="serif lang-en">Loa</span>
-                        </h3>
-                        <p class="text-gray-600 leading-loose">
-                            <span class="lang-ja">奪う（成立している）。既に在る色を奪い、自らの認識を強化する者。</span>
-                            <span class="lang-en">The Usurper (Established). One who steals existing colors to strengthen their own perception.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Read / CTA -->
-        <section class="mb-24 fade-in">
-            <div class="bg-white/60 border border-gray-100 rounded-2xl p-8 md:p-16 text-center shadow-xl shadow-gray-200/50">
-                <h2 class="serif text-2xl md:text-3xl mb-6">
-                    <span class="lang-ja">物語を読む</span>
-                    <span class="lang-en tracking-wider">Read the Story</span>
-                </h2>
-                <p class="text-gray-500 mb-10 leading-relaxed">
-                    <span class="lang-ja">『畫界アルカディア 序章：白紙の世界』<br>Kindleストアにて独占公開中</span>
-                    <span class="lang-en">"GAKAI ARCADIA Prologue: The Blank World"<br>Available exclusively on Kindle Store</span>
-                </p>
-                <a href="https://www.amazon.co.jp/dp/B0GTKTXNS8" target="_blank" rel="noopener noreferrer" class="kindle-btn inline-flex items-center gap-3 text-white px-10 py-4 rounded-full font-semibold tracking-wider">
-                    <span class="lang-ja">Kindleで読む</span>
-                    <span class="lang-en">Read on Kindle</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="text-center pt-12 border-t border-gray-200">
-            <p class="text-xs tracking-[0.4em] text-gray-400 font-light">© GAKAI ARCADIA ALL RIGHTS RESERVED.</p>
-        </footer>
-
-    </div>
-
-    <script>
-        function setLanguage(lang) {
-            document.body.setAttribute('data-lang', lang);
-
-            const btnJa = document.getElementById('btn-ja');
-            const btnEn = document.getElementById('btn-en');
-
-            if (lang === 'ja') {
-                btnJa.classList.add('active', 'text-white');
-                btnJa.classList.remove('text-gray-500');
-                btnEn.classList.remove('active', 'text-white');
-                btnEn.classList.add('text-gray-500');
-            } else {
-                btnEn.classList.add('active', 'text-white');
-                btnEn.classList.remove('text-gray-500');
-                btnJa.classList.remove('active', 'text-white');
-                btnJa.classList.add('text-gray-500');
-            }
-
-            localStorage.setItem('gakai_lang', lang);
-        }
-
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('gakai_lang') || 'ja';
-            setLanguage(savedLang);
-
-            setTimeout(() => {
-                const header = document.querySelector('header');
-                if (header) header.classList.add('visible');
-            }, 100);
-        });
-    </script>
-
+    <footer>
+      © GAKAI ARCADIA ALL RIGHTS RESERVED.
+    </footer>
+  </div>
 </body>
 </html>
